@@ -50,16 +50,16 @@ int pop_from_minheap(vector<int> &A)
         return(-1);     // Heap empty
     }
 
-    if(A.size()==1)
+    if(A.size()==1)     // Only 1 element in heap
     {
         int temp=A[0];
         A.pop_back();
-        return(temp);   // Only 1 element in heap
+        return(temp);   
     }
 
     int temp=A[0];      // Storing copy of 'min' element
     
-    A[0]=A[A.size()-1]; // Rreplacing by last element
+    A[0]=A[A.size()-1]; // Replacing by last element
     A.pop_back();       // and popping last element
 
     min_heapify(A,0);   // Restore heap
